@@ -48,6 +48,45 @@ span {
 }
 
 /* ---------------------------------------------------
+    CUSTOM BUTTON STYLE
+----------------------------------------------------- */
+
+.btn-account {
+  color: #2a78f7;
+  background-color: #fff;
+  border-color: #2a78f7;
+}
+
+.btn-account:hover {
+  color: #2a78f7;
+  background-color: #fff;
+  border-color: #2a78f7;
+}
+
+.btn-account:focus, .btn-account.focus {
+  box-shadow: 0 0 0 0.2rem rgba(61, 134, 255, 0.5);
+}
+
+.btn-account.disabled, .btn-account:disabled {
+  color: #2a78f7;
+  background-color: #fff;
+  border-color: #2a78f7;
+}
+
+.btn-account:not(:disabled):not(.disabled):active, .btn-account:not(:disabled):not(.disabled).active,
+.show > .btn-account.dropdown-toggle {
+  color: #0061ff;
+  background-color: #0061ff;
+  border-color: #0061ff;
+}
+
+.btn-account:not(:disabled):not(.disabled):active:focus, .btn-account:not(:disabled):not(.disabled).active:focus,
+.show > .btn-account.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(61, 134, 255, 0.5);
+}
+
+
+/* ---------------------------------------------------
     SIDEBAR STYLE
 ----------------------------------------------------- */
 
