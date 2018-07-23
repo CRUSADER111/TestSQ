@@ -7,6 +7,9 @@ $action = $page =  '';
 
 // Initialize the session
 session_start();
+
+
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     
     if (!empty(trim($_POST['action']))) {
@@ -58,7 +61,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
             <ul class="list-unstyled components">
                 <li class="active">
-                    <a href="#" id="listItem">
+                    <a href="#home" id="listItem" class="sidebarItem">
                         <i class="fas fa-home"></i>
                         Home
                     </a>
@@ -73,16 +76,20 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 </li>
                 <li>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <form method="post">
+                        <!-- <form method="post"> -->
                             <li>
-                                <input type="submit" name="action" value="View Quizzes">View Quizzes>
+                                <!-- <input type="submit" name="action" value="View Quizzes">View Quizzes> -->
+                                <a href="#viewQuizzes" class="sidebarItem">
+                                    <i></i>
+                                    View Quizzes
+                                </a>
                             </li>
-                        </form>
+                        <!-- </form> -->
                     </ul>
                 </li>
                 <?php endif; ?>                
                 <li>
-                    <a href="#">
+                    <a href="#about" class="sidebarItem">
                         <i class="fas fa-briefcase"></i>
                         About
                     </a>
@@ -100,7 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </a>
                 </li> -->
                 <li>
-                    <a href="#">
+                    <a href="#contact" class="sidebarItem">
                         <i class="fas fa-paper-plane"></i>
                         Contact
                     </a>
@@ -152,19 +159,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     </div>
                 </div>
             </nav>
-            <?php if($_SESSION['page'] = 'View Quizzes' && !empty($_SESSION['action'])): ?>
-                <?php echo ($_SESSION['action']); ?>
-            <?php else: ?>
+            <div id="navbaraction">
                 <h2>WebbiSkools Quiz Manager</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <?php endif; ?>
+            </div>
+            <div id="quiztable"></div>
         </div>
     </div>
     
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
@@ -176,14 +183,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 $(this).toggleClass('active');
             });
         });
-    </script>
+        </script>
 
-        <!-- <script type="text/javascript">
-            $(document).ready(function () {
-                $('.li').on('click', function () {
-                    $('.li').toggleClass('active');
-                });
-            });
-        </script> -->
+        <script src="js/queries.js"></script>
   </body>
 </html>
